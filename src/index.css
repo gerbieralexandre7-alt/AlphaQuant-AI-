@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-slate-950: #020617;
+  --color-slate-900: #070c20;
+  --color-slate-850: #0d1431;
+  --color-slate-800: #121a3a;
+  --color-slate-700: #1a2550;
+  
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-spin-slow: spin 12s linear infinite;
+}
+
+/* Custom CSS to inject the Bento Grid aesthetic into all existing elements */
+
+/* Base body and typography defaults */
+body {
+  background-color: #020617;
+  color: #94a3b8; /* text-slate-400 */
+  font-family: var(--font-sans);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.04) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(2, 6, 23, 1) 0px, #020617 100%);
+  background-attachment: fixed;
+}
+
+/* Update default scrollbar for Bloomberg/Terminal feel */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: #121a3a;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* Bento Cells glassmorphism / card styles */
+.rounded-2xl, .rounded-xl, .rounded-lg {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Apply sleek top/inner borders to give premium 3D/glass feel to Bento Cells */
+.border-slate-800, .border-slate-800\/80, .border-slate-900 {
+  border-color: rgba(30, 41, 59, 0.5) !important;
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* Enhancing hover states on interactive cards with subtle neon cyan/blue glow */
+.hover\:border-slate-800:hover, 
+div[onClick].hover\:border-slate-800:hover,
+.cursor-pointer:hover {
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5), 
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.05),
+              0 0 15px -3px rgba(37, 99, 235, 0.15) !important;
+  transform: translateY(-1px);
+}
+
+/* Set displays to display-font for headings */
+h1, h2, h3, h4, .font-bold {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+/* Monospace stats numbers for high fidelity feel */
+.font-mono {
+  font-family: var(--font-mono) !important;
+  letter-spacing: -0.02em;
+}
+
+/* Custom indicator styles to match design html */
+.bg-emerald-950\/60, .bg-emerald-500\/10 {
+  background-color: rgba(16, 185, 129, 0.08) !important;
+  color: #34d399 !important;
+  border: 1px solid rgba(16, 185, 129, 0.2) !important;
+}
+
+.bg-red-950\/60, .bg-red-500\/10 {
+  background-color: rgba(239, 68, 68, 0.08) !important;
+  color: #f87171 !important;
+  border: 1px solid rgba(239, 68, 68, 0.2) !important;
+}
+
+/* Custom premium input fields */
+input, select, textarea {
+  background-color: rgba(7, 12, 32, 0.6) !important;
+  border: 1px solid rgba(30, 41, 59, 0.6) !important;
+  transition: all 0.2s ease !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: rgba(59, 130, 246, 0.6) !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15) !important;
+  outline: none !important;
+}

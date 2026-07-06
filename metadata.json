@@ -1,0 +1,6 @@
+{
+  "name": "AlphaQuant IA",
+  "description": "An AI-powered institutional-grade trading intelligence platform that transforms chart screenshots into complete, high-conviction market analysis and setups.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
